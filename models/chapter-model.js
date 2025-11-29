@@ -39,8 +39,22 @@ const chapterSchema = mongoose.Schema(
       of: Boolean,
       default: {},
     },
+    attachments: {
+  type: [{ type: String }],
+  default: [],
+    },
+    assignments: [
+  {
+    title: String,
+    description: String,
+    dueDate: String,
+    points: Number,
+    fileUrl: String,
+  },
+],
   },
   { timestamps: true }
+  
 );
 
 const chapterModel = mongoose.model("Chapter", chapterSchema);

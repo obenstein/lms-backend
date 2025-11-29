@@ -4,12 +4,7 @@ const liveSessionSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: String,
   startTime: { type: Date, required: true },
-  courseId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Course",
-    required: true,
-  },
-  invitees: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+  invitees: [{ type:String }],
   joinLink: { type: String, required: true },
 });
 

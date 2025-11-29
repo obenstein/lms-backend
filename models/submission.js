@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const submissionSchema = new mongoose.Schema({
-  studentId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  studentId: { type: String, required: true },
   assignmentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Assignment', required: true },
   submittedAt: { type: Date, default: Date.now },
   status: { type: String, enum: ['submitted', 'pending'], default: 'pending' },

@@ -1,8 +1,8 @@
 import express from 'express';
-import { createAssignment,getAssignmentsByCourse } from '../controllers/assignment-controller.js';
+import { createAssignment,getAssignmentsByChapter } from '../controllers/assignment-controller.js';
 const router = express.Router();
 
 router.post('/', createAssignment);
-router.get('/:courseId', getAssignmentsByCourse);
-
+// router.get('/chapter/:chapterId', getAssignmentsByChapter);
+router.get('/chapter/:assignmentId',getAssignmentsByChapter)
 export default router;

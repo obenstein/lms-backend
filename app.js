@@ -9,6 +9,7 @@ import assignmentRoutes from './routes/assignment-route.js';
 import submissionRoutes from './routes/submission-route.js';
 import workItemRoutes from './routes/work-item-route.js';    
 import liveSessionRoutes from './routes/live-session-route.js';
+import courseaccessRouter from './routes/course-access-route.js';
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -34,7 +35,9 @@ app.use('/api/student-progress', studentProgressRoutes);
 app.use('/api/assignments', assignmentRoutes);
 app.use('/api/submissions', submissionRoutes);
 app.use('/api/work-items', workItemRoutes);
-app.use('/api/live-sessions', liveSessionRoutes);
+app.use('/api/livesessions', liveSessionRoutes);
+app.use("/api/access", courseaccessRouter);
+
 
 mongoose
   .connect(process.env.URL)

@@ -5,13 +5,13 @@ export const createAssignment = async (req, res) => {
     await assignment.save();
     res.json(assignment);
   } catch (error) {
-    res.status(500).jSson({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
-export const getAssignmentsByCourse = async (req, res) => {
+export const getAssignmentsByChapter = async (req, res) => {
   try {
-    const assignments = await Assignment.find({ courseId: req.params.courseId });
+    const assignments = await Assignment.find({ _id: req.params.assignmentId });
     res.json(assignments);
   } catch (error) {
     res.status(500).json({ message: error.message });
