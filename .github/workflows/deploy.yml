@@ -14,7 +14,7 @@ jobs:
 
       # 2️⃣ Setup SSH to connect to EC2
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.8.1
+        uses: webfactory/ssh-agent@v0.9
         with:
           ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
