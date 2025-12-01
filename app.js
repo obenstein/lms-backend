@@ -20,7 +20,7 @@ app.use(Express.json());
 
 // Enable CORS for all routes
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:4000");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE,PATCH");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -35,10 +35,8 @@ app.use('/api/student-progress', studentProgressRoutes);
 app.use('/api/assignments', assignmentRoutes);
 app.use('/api/submissions', submissionRoutes);
 app.use('/api/work-items', workItemRoutes);
-app.use('/api/livesessions', liveSessionRoutes);
+app.use('/api/live-sessions', liveSessionRoutes);
 app.use("/api/access", courseaccessRouter);
-
-
 mongoose
   .connect(process.env.URL)
   .then(() => {

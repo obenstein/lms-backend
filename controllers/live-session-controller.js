@@ -55,12 +55,12 @@ export const getSessionById = async (req, res) => {
 }
 export const getSessionsByStudent = async (req, res) => {
   try {
+    console.log(req.params)
     const studentId = req.params.studentId;
 
     const sessions = await LiveSessionModel.find({
       invitees: studentId,
     }).sort({ startTime: -1 }); // optional: show latest first
-
     res.json(sessions);
   } catch (error) {
     res.status(500).json({ message: error.message });
