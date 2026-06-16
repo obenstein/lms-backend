@@ -10,6 +10,7 @@ import submissionRoutes from './routes/submission-route.js';
 import workItemRoutes from './routes/work-item-route.js';    
 import liveSessionRoutes from './routes/live-session-route.js';
 import courseaccessRouter from './routes/course-access-route.js';
+import uploadRouter from './routes/upload-route.js';
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -37,6 +38,7 @@ app.use('/api/submissions', submissionRoutes);
 app.use('/api/work-items', workItemRoutes);
 app.use('/api/live-sessions', liveSessionRoutes);
 app.use("/api/access", courseaccessRouter);
+app.use("/api/upload", uploadRouter);
 mongoose
   .connect(process.env.URL)
   .then(() => {
